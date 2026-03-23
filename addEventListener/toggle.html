@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+    <style>
+        .message {
+            /* display: none; */
+            background: yellow;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid orange;
+            border-radius: 30px;
+        }
+        .message button {
+            padding: 20px 40px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            font-size: 17px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" required id="inputBox">
+    <h1 id="heading"></h1>
+    <button>+</button> <br>
+
+    <div class="message">
+        <h1>Hello, my name is Bakhtovar</h1>
+        <h2>I`m 18 years old</h2>
+        <h3>I`m a student of Polytechnical Institute by name M. Osimi</h3>
+        <button>Learn More</button>
+    </div>
+
+    <button id="btn_play">Music Play</button> <br>
+    <audio src="Taylor Swift - Anti-Hero.mp3" controls id="audio"></audio>
+
+    <br>
+    
+    <video id="mainVideo" src="video.mp4" controls width="70%"></video>
+    <button class="play">PLAY</button>
+    
+    <script>
+        const input = document.getElementById('inputBox')
+        const header = document.getElementById('heading')
+        const btn = document.querySelector('button')
+        const mainMessage = document.querySelector('.message')
+
+        const btnMusicPlay = document.getElementById('btn_play')
+        const audioPlay = document.getElementById('audio')
+        const videoPlay = document.querySelector('.play')
+        const video = document.getElementById('mainVideo')
+
+        videoPlay.addEventListener('click', () => {
+            if(video.paused) {
+                video.play()
+                videoPlay.textContent = 'PAUSE'
+            } else {
+                video.pause()
+                videoPlay.textContent = 'PLAY'
+            }
+        })
+
+
+audioPlay.style.display = 'none'
+
+        let counter = 0
+                btn.style.width = '100px'
+                btn.style.aspectRatio = '1'
+                btn.style.background = 'red'
+                btn.style.borderRadius = '10px'
+                btn.style.color = 'white'
+                btn.style.fontSize = '20px'
+                btn.style.transform = 'rotate(180deg)'
+                btn.style.borderColor = 'red'
+
+                mainMessage.style.display = 'none'
+        btn.addEventListener('keydown', (e) => {
+            if (e.key == 'Enter') {
+                counter++;
+                console.log(counter)
+                btn.innerText = '-'
+            }
+        })
+
+        // btn.addEventListener('mousemove', (e) => {
+        //     console.log(`X: ${e.clientX}, Y: ${e.clientY}`)
+        // })
+
+        btn.addEventListener('mouseenter', (e) => {
+            input.value = 'Hello, Bakhtovar!'
+        })
+
+        btn.addEventListener('mouseleave', (e) => {
+            input.value = ''
+        })
+        
+        window.addEventListener('scroll', (e) => {
+            console.log(`${scrollY}px`)
+        })
+
+        function showMessage () {
+            if (mainMessage.style.display == 'none') {
+                mainMessage.style.display = 'block'
+            } else {
+                mainMessage.style.display = 'none'
+            }
+            
+        }
+
+        btnMusicPlay.addEventListener('click', () => {
+            if(audioPlay.paused) {
+                audioPlay.play()
+                btnMusicPlay.textContent = 'Pause'
+            } else {
+                audioPlay.pause()
+                btnMusicPlay.textContent = 'Music Play'
+            }
+        })
+
+        console.log(window.history)
+
+        btn.addEventListener('click', showMessage)
+    </script>
+</body>
+</html>

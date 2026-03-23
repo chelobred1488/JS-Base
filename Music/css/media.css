@@ -1,0 +1,20 @@
+@media screen and (max-width : 768px) {
+    header {
+        display: block;
+    }
+    ul {
+        margin-top: 10px;
+        flex-direction: column;
+        transition: all .0.5s;
+        font-size: 20px;
+        height: 0;
+    }
+    .btn {
+        padding:  10px 20px;
+        background: red;
+        display: flex;
+    }
+    .btn:focus + header {
+        background: red;
+    }
+}

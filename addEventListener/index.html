@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event JavaScript</title>
+</head>
+<body>
+
+    <button data-number="1" class="btn">Click <strong>1</strong></button>
+    <button data-number="2" class="btn">Click <strong>2</strong></button>
+    <button data-number="3" class="btn">Click <strong>3</strong></button>
+    <button data-number="4" class="btn">Click <strong>4</strong></button>
+
+    <h1 id="clicker">0</h1>
+
+    <script>
+        const buttons = document.querySelectorAll('.btn')
+        const clicks = document.getElementById('clicker')
+        let i = 0
+        const handleClick = (event) => {
+            console.log("target >", event.target)
+            console.log("currentTarget >", event.currentTarget)
+            console.log(event.target === event.currentTarget)
+            clicks.innerText = i = i + 3
+        }
+
+        window.addEventListener('click', () => {
+            console.log('Window Click!');
+        })
+
+        buttons.forEach(button => {
+            button.addEventListener('click', handleClick)
+        })
+    </script>
+
+</body>
+</html>

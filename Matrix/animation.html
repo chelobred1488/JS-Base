@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт с анимацией</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Основной контент -->
+    <div id="content" style="display:none;">
+        <h1>Добро пожаловать на мой сайт!</h1>
+        <p>Основной контент сайта</p>
+    </div>
+
+    <style>
+       /* Прелоадер на всю страницу */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Цвет фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Анимация загрузки */
+.loader {
+    border: 16px solid #f3f3f3; /* Светлый бордер */
+    border-top: 16px solid #3498db; /* Темный бордер (анимируется) */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+/* Анимация вращения */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+ 
+    </style>
+
+<script>
+    // Ждем полной загрузки страницы
+window.onload = function() {
+// Прячем прелоадер
+document.getElementById("preloader").style.display = "none";
+// Показываем контент
+document.getElementById("content").style.display = "block";
+};
+
+
+</script>
+</body>
+</html>

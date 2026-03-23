@@ -1,0 +1,28 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 0px 20px;
+    color: #fff;
+}
+.first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    text-align: center;
+}
+.btn{
+    /* display: none; */
+    cursor: pointer;
+    background: red;
+}
+.btn:checked + header {
+    background: red;
+}
